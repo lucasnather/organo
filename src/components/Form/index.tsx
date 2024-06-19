@@ -2,6 +2,7 @@ import { z } from "zod";
 import { Button, ContainerInputs, FormContainer, Input, Label, Legend, Select } from "./style";
 import { useForm } from 'react-hook-form'
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 
 const formCardSchema = z.object({
     name: z.string().min(3, "Mínimno de 3 caracters"),
@@ -13,12 +14,16 @@ const formCardSchema = z.object({
 type FormCardType = z.infer<typeof formCardSchema>
 
 export function Form() {
+    const [collaborattor, setColarattor] = useState<FormCardType[]>([])
+
+    const teams = ["Programação", "Front-End", "Data Science", "DevOps", "Back-End", "Ux e Design", "Mobile", "Inovação e Gestão"]
+
     const { register, reset, handleSubmit } = useForm<FormCardType>({
         resolver: zodResolver(formCardSchema)
     })
 
     function handleSubmitForm(data: FormCardType) {
-        console.log(data)
+        setColarattor((prevState) => [...prevState, data])
         reset()
     }
 
@@ -44,7 +49,11 @@ export function Form() {
             <ContainerInputs>
                 <Label htmlFor="team">Time</Label>
                 <Select {...register('team')}>
-                    <option value="am">am</option>
+                    {
+                        teams.map(team => {
+                            return <option value={team} key={team}>{team}</option>
+                        })
+                    }
                 </Select>
             </ContainerInputs>
             
