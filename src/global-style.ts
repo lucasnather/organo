@@ -9,7 +9,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: #fff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+
+        color: ${({theme}) => theme.text.black};
+        background-color: ${({theme}) => theme.primary.white};
     }
     
 `
