@@ -2,7 +2,7 @@ export const defaulTheme = {
 
     primary: {
         "purple": "#6278F7",
-        "green": "#395FFD4",
+        "green": "#95FFD4",
         "gray": "#F2F2F2",
         "white": "#FFF"
     },
@@ -27,6 +27,7 @@ export const defaulTheme = {
         }
     },
     text: {
-        black: "#212121"
+        black: "#212121",
+        gray: "#A4A4A4"
     }
 } as const

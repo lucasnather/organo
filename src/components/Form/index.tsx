@@ -1,31 +1,31 @@
-import { FormContainer, Input, Label, Legend, Select } from "./style";
+import { Button, ContainerInputs, FormContainer, Input, Label, Legend, Select } from "./style";
 
 export function Form() {
     return (
         <FormContainer action="#">
             <Legend>Preencha os dados para criar o card do colaborador.</Legend>
 
-            <div>
+            <ContainerInputs>
                 <Label htmlFor="name">Nome</Label>
                 <Input type="text" name="name" id="name" placeholder="Digite seu nome"/>
-            </div>
+            </ContainerInputs>
 
-            <div>
+            <ContainerInputs>
                 <Label htmlFor="role">Cargo</Label>
                 <Input type="text" name="role" id="role" placeholder="Digite seu cargo" />
-            </div>
+            </ContainerInputs>
 
-            <div>
+            <ContainerInputs>
                 <Label htmlFor="image">Imagem</Label>
                 <Input type="text" name="image" id="image" placeholder="Informe o endereço da imagem" />
-            </div>
+            </ContainerInputs>
 
-            <div>
+            <ContainerInputs>
                 <Label htmlFor="team">Time</Label>
                 <Select name="team" id="team"></Select>
-            </div>
+            </ContainerInputs>
             
-            <button type="submit">Criar Card</button>
+            <Button type="submit">Criar Card</Button>
         </FormContainer>
     )
 }
